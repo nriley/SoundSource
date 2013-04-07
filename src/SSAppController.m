@@ -52,7 +52,8 @@
 			NSImage* newImg = [NSImage imageNamed: @"menuIconBlack"];
 			bgImage = [[NSImage alloc] initWithSize: NSMakeSize( [newImg size].width, [newImg size].height+1.5 )];
 			[bgImage lockFocus];
-			[newImg compositeToPoint: NSZeroPoint operation: NSCompositeSourceOver];
+            [newImg drawAtPoint: NSZeroPoint fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1.0];
+			// [newImg compositeToPoint: NSZeroPoint operation: NSCompositeSourceOver];
 			[bgImage unlockFocus];
 		}
 
@@ -60,7 +61,8 @@
 			NSImage* newImg = [NSImage imageNamed: @"menuIconAlt"];
 			bgImageAlt = [[NSImage alloc] initWithSize: NSMakeSize( [newImg size].width, [newImg size].height+1.5 )];
 			[bgImageAlt lockFocus];
-			[newImg compositeToPoint: NSZeroPoint operation: NSCompositeSourceOver];
+            [newImg drawAtPoint: NSZeroPoint fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1.0];
+			// [newImg compositeToPoint: NSZeroPoint operation: NSCompositeSourceOver];
 			[bgImageAlt unlockFocus];
 		}
 
