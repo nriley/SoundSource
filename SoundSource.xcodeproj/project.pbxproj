@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		781000A8104382020069B86A /* ReadMe.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 781000A5104382020069B86A /* ReadMe.rtfd */; };
+		781000EC104383AD0069B86A /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 781000EB104383AD0069B86A /* AppIcon.icns */; };
+		7810FF2910437E490069B86A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7810FF2310437E490069B86A /* MainMenu.xib */; };
+		7810FF3510437E8C0069B86A /* SSAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF3410437E8C0069B86A /* SSAppController.m */; };
+		7810FF5610437F220069B86A /* SSAudioDeviceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF4F10437F220069B86A /* SSAudioDeviceCenter.m */; };
+		7810FF5710437F220069B86A /* SSAboutBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF5110437F220069B86A /* SSAboutBox.m */; };
+		7810FF5810437F220069B86A /* SSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF5210437F220069B86A /* SSPreferences.m */; };
+		7810FF5910437F220069B86A /* SSMenuVolumeSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF5310437F220069B86A /* SSMenuVolumeSliderView.m */; };
+		7810FF5E10437F4F0069B86A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7810FF5D10437F4F0069B86A /* CoreAudio.framework */; };
+		7810FF6E10437F880069B86A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7810FF6D10437F880069B86A /* Carbon.framework */; };
+		78A76818104702F500349A68 /* SSLegacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A76817104702F500349A68 /* SSLegacy.m */; };
+		78A768771047133600349A68 /* menuIconAlt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78A768751047133600349A68 /* menuIconAlt.pdf */; };
+		78A768781047133600349A68 /* menuIconBlack.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78A768761047133600349A68 /* menuIconBlack.pdf */; };
+		78AB6D39104499570011CE3D /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78AB6D37104499570011CE3D /* AboutBox.xib */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		781000A6104382020069B86A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = English; path = English.lproj/ReadMe.rtfd; sourceTree = "<group>"; };
+		781000EB104383AD0069B86A /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		7810FF2410437E490069B86A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7810FF2510437E490069B86A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7810FF2810437E490069B86A /* SoundSource_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundSource_Prefix.pch; sourceTree = "<group>"; };
+		7810FF3310437E8C0069B86A /* SSAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppController.h; sourceTree = "<group>"; };
+		7810FF3410437E8C0069B86A /* SSAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAppController.m; sourceTree = "<group>"; };
+		7810FF4E10437F220069B86A /* SSAudioDeviceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAudioDeviceCenter.h; sourceTree = "<group>"; };
+		7810FF4F10437F220069B86A /* SSAudioDeviceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAudioDeviceCenter.m; sourceTree = "<group>"; };
+		7810FF5010437F220069B86A /* SSMenuVolumeSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMenuVolumeSliderView.h; sourceTree = "<group>"; };
+		7810FF5110437F220069B86A /* SSAboutBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAboutBox.m; sourceTree = "<group>"; };
+		7810FF5210437F220069B86A /* SSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPreferences.m; sourceTree = "<group>"; };
+		7810FF5310437F220069B86A /* SSMenuVolumeSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMenuVolumeSliderView.m; sourceTree = "<group>"; };
+		7810FF5410437F220069B86A /* SSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPreferences.h; sourceTree = "<group>"; };
+		7810FF5510437F220069B86A /* SSAboutBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAboutBox.h; sourceTree = "<group>"; };
+		7810FF5D10437F4F0069B86A /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		7810FF6D10437F880069B86A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		78A76816104702F500349A68 /* SSLegacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLegacy.h; sourceTree = "<group>"; };
+		78A76817104702F500349A68 /* SSLegacy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLegacy.m; sourceTree = "<group>"; };
+		78A768751047133600349A68 /* menuIconAlt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = menuIconAlt.pdf; sourceTree = "<group>"; };
+		78A768761047133600349A68 /* menuIconBlack.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = menuIconBlack.pdf; sourceTree = "<group>"; };
+		78AB6D38104499570011CE3D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AboutBox.xib; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* SoundSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				7810FF5E10437F4F0069B86A /* CoreAudio.framework in Frameworks */,
+				7810FF6E10437F880069B86A /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				7810FF6D10437F880069B86A /* Carbon.framework */,
+				7810FF5D10437F4F0069B86A /* CoreAudio.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* SoundSource.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* SoundSource */ = {
+			isa = PBXGroup;
+			children = (
+				7810FF2610437E490069B86A /* src */,
+				7810FF2210437E490069B86A /* res */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = SoundSource;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7810FF2210437E490069B86A /* res */ = {
+			isa = PBXGroup;
+			children = (
+				7810FF2510437E490069B86A /* Info.plist */,
+				781000EB104383AD0069B86A /* AppIcon.icns */,
+				78A768751047133600349A68 /* menuIconAlt.pdf */,
+				78A768761047133600349A68 /* menuIconBlack.pdf */,
+				781000A5104382020069B86A /* ReadMe.rtfd */,
+				7810FF2310437E490069B86A /* MainMenu.xib */,
+				78AB6D37104499570011CE3D /* AboutBox.xib */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		7810FF2610437E490069B86A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7810FF2810437E490069B86A /* SoundSource_Prefix.pch */,
+				7810FF3310437E8C0069B86A /* SSAppController.h */,
+				7810FF3410437E8C0069B86A /* SSAppController.m */,
+				7810FF5410437F220069B86A /* SSPreferences.h */,
+				7810FF5210437F220069B86A /* SSPreferences.m */,
+				7810FF5510437F220069B86A /* SSAboutBox.h */,
+				7810FF5110437F220069B86A /* SSAboutBox.m */,
+				7810FF4E10437F220069B86A /* SSAudioDeviceCenter.h */,
+				7810FF4F10437F220069B86A /* SSAudioDeviceCenter.m */,
+				7810FF5010437F220069B86A /* SSMenuVolumeSliderView.h */,
+				7810FF5310437F220069B86A /* SSMenuVolumeSliderView.m */,
+				78A76816104702F500349A68 /* SSLegacy.h */,
+				78A76817104702F500349A68 /* SSLegacy.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* SoundSource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SoundSource" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundSource;
+			productInstallPath = "$(HOME)/Applications";
+			productName = SoundSource;
+			productReference = 8D1107320486CEB800E47090 /* SoundSource.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SoundSource" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* SoundSource */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* SoundSource */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7810FF2910437E490069B86A /* MainMenu.xib in Resources */,
+				781000A8104382020069B86A /* ReadMe.rtfd in Resources */,
+				781000EC104383AD0069B86A /* AppIcon.icns in Resources */,
+				78AB6D39104499570011CE3D /* AboutBox.xib in Resources */,
+				78A768771047133600349A68 /* menuIconAlt.pdf in Resources */,
+				78A768781047133600349A68 /* menuIconBlack.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7810FF3510437E8C0069B86A /* SSAppController.m in Sources */,
+				7810FF5610437F220069B86A /* SSAudioDeviceCenter.m in Sources */,
+				7810FF5710437F220069B86A /* SSAboutBox.m in Sources */,
+				7810FF5810437F220069B86A /* SSPreferences.m in Sources */,
+				7810FF5910437F220069B86A /* SSMenuVolumeSliderView.m in Sources */,
+				78A76818104702F500349A68 /* SSLegacy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		781000A5104382020069B86A /* ReadMe.rtfd */ = {
+			isa = PBXVariantGroup;
+			children = (
+				781000A6104382020069B86A /* English */,
+			);
+			name = ReadMe.rtfd;
+			sourceTree = "<group>";
+		};
+		7810FF2310437E490069B86A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7810FF2410437E490069B86A /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		78AB6D37104499570011CE3D /* AboutBox.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78AB6D38104499570011CE3D /* English */,
+			);
+			name = AboutBox.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/../../../System/Library/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/SoundSource_Prefix.pch;
+				INFOPLIST_FILE = res/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = SoundSource;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/../../../System/Library/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/SoundSource_Prefix.pch;
+				INFOPLIST_FILE = res/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = SoundSource;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SoundSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SoundSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
