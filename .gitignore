@@ -1,0 +1,9 @@
+build
+xcuserdata
+.DS_Store
+.idea
+*.pbxuser
+*.mode?v3
+*~
+*~.nib
+#*
