@@ -36,3 +36,6 @@ page yet, but here's a simple example of how to use it:
     % soundsource -o 'C-Media USB Headphone Set'
     % soundsource -o
     C-Media USB Headphone Set  
+
+A few examples of using `soundsource` in scripts are
+[on my blog](http://njr.sabi.net/2014/06/21/soundsource-a-few-examples/).
