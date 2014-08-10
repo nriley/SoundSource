@@ -18,6 +18,7 @@
 - (NSRect)_sliderFrame;
 - (NSDictionary *)_labelAttributes;
 - (NSRect)_labelFrame;
+- (void)_sliderMoved: (id)sender;
 
 @end
 

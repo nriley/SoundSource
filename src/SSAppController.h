@@ -11,7 +11,7 @@
 @class SSPreferences;
 @class SSAudioDeviceCenter;
 
-@interface SSAppController : NSObject
+@interface SSAppController : NSObject <NSMenuDelegate>
 {
 	NSStatusItem*		_statusItem;
 	SSPreferences*		_prefs;

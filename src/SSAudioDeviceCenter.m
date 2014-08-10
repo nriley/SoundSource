@@ -47,7 +47,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (NSString*)description
 {
-	return [NSString stringWithFormat: @"<%@: %@ (%d)>", [self class], [self name], [self coreAudioDeviceID]];
+	return [NSString stringWithFormat: @"<%@: %@ (%d)>", [self class], [self name], (unsigned int)[self coreAudioDeviceID]];
 }
 
 - (BOOL)isEqual: (SSAudioDevice*)device
@@ -344,7 +344,7 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 	err = AudioHardwareSetProperty(type, sizeof(deviceID), &deviceID);
 	if( err )
 	{
-		NSLog( @"AudioHardwareSetProperty(%X) Error: %d", type, err );
+		NSLog( @"AudioHardwareSetProperty(%@) Error: %d", NSFileTypeForHFSTypeCode(type), (int)err );
 	}
 	
 	return err;
@@ -497,7 +497,7 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 			theError = AudioHardwareServiceSetPropertyDataPtr(theObject, &theAddress, 0, NULL, theDataSize, &newVolume);
 			if( theError )
 			{
-				NSLog(@"error %@ setting device volume for channel %ud", [self _stringForCAError: theError], theAddress.mElement);
+				NSLog(@"error %@ setting device volume for channel %ud", [self _stringForCAError: theError], (unsigned int)theAddress.mElement);
 				return NAN;
 			}
 		}
@@ -515,7 +515,7 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 		theError = AudioHardwareServiceGetPropertyDataPtr(theObject, &theAddress, 0, NULL, &theDataSize, &theVolume[index]);
 		if( theError )
 		{
-			NSLog(@"error %@ getting device volume for channel %u", [self _stringForCAError: theError], theAddress.mElement);
+			NSLog(@"error %@ getting device volume for channel %u", [self _stringForCAError: theError], (unsigned int)theAddress.mElement);
 			return NAN;
 		}
 	}
