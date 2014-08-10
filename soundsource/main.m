@@ -39,13 +39,13 @@ int main(int argc, const char * argv[]) {
         SSAudioDeviceCenter *deviceCenter = [[SSAudioDeviceCenter alloc] init];
 
         if (argc < 2) {
-            printf("Output (volume %.1f):\n", [deviceCenter outputVolume]);
+            printf("Output (volume %.3f):\n", [deviceCenter outputVolume]);
             printAudioDevices([deviceCenter outputDevices],
                               [deviceCenter selectedOutputDevice]);
-            printf("Input (volume %.1f):\n", [deviceCenter inputVolume]);
+            printf("Input (volume %.3f):\n", [deviceCenter inputVolume]);
             printAudioDevices([deviceCenter inputDevices],
                               [deviceCenter selectedInputDevice]);
-            printf("System (volume %.1f):\n", [deviceCenter systemVolume]);
+            printf("System (volume %.3f):\n", [deviceCenter systemVolume]);
             printAudioDevices([NSArray arrayWithObject:[deviceCenter selectedSystemDevice]],
                               [deviceCenter selectedSystemDevice]);
             return 0;
