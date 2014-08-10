@@ -307,8 +307,14 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 	
 	while( (device = [deviceEnum nextObject]) != nil )
 	{
-		if( [device coreAudioDeviceID] == deviceID )
+		if ([device coreAudioDeviceID] == deviceID) {
+            OSType selectedSourceType = [device selectedCoreAudioSourceType];
+            while ([device coreAudioSourceType] != selectedSourceType) {
+                if ((device = [deviceEnum nextObject]) == nil)
+                    return nil; // ran out of devices while looking
+            }
 			return device;
+        }
 	}
 
 	return nil;
@@ -345,6 +351,21 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 	{
 		NSLog( @"AudioHardwareSetProperty(%@) Error: %d", NSFileTypeForHFSTypeCode(type), (int)err );
 	}
+
+    OSType sourceType = [device coreAudioSourceType];
+    if( sourceType != [device selectedCoreAudioSourceType] )
+    {
+        AudioObjectPropertyAddress propertyAddress = {
+            .mSelector = kAudioDevicePropertyDataSource,
+            .mScope = (type == kAudioHardwarePropertyDefaultInputDevice) ? kAudioDevicePropertyScopeInput : kAudioDevicePropertyScopeOutput,
+            .mElement = kAudioObjectPropertyElementMaster
+        };
+        err = AudioObjectSetPropertyData(deviceID, &propertyAddress, 0, NULL, sizeof(sourceType), &sourceType);
+        if( err )
+        {
+            NSLog( @"AudioObjectSetPropertyData(%@) Error: %d", NSFileTypeForHFSTypeCode(sourceType), (int)err );
+        }
+    }
 	
 	return err;
 }
