@@ -64,7 +64,6 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (NSString*)name
 {
-	OSType sourceType = [self fetchCoreAudioSourceType];
 	OSStatus err;
 	UInt32 size;
 	NSString* deviceName = nil;
@@ -77,12 +76,12 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 			deviceName = nil;
 	}
 
-	if( sourceType != 0 )
+	if( _sourceType != 0 )
 	{
 		AudioValueTranslation trans;
 
-		trans.mInputData		= &sourceType;
-		trans.mInputDataSize	= sizeof(sourceType);
+		trans.mInputData		= &_sourceType;
+		trans.mInputDataSize	= sizeof(_sourceType);
 		trans.mOutputData		= &sourceName;
 		trans.mOutputDataSize	= sizeof(sourceName);
 		size = sizeof(AudioValueTranslation);
@@ -93,10 +92,10 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 	
 	if( sourceName && ![sourceName isEqual: deviceName] )
 	{
-		//In the case of just 1 source on the device, we do DeviceName:SourceName (this matches Sound.prefPane)
+        // If >1 source on device, use DeviceName: SourceName (doesn't match Sound prefpane, but is much easier to understand)
 		if( !AudioDeviceGetPropertyInfo([self coreAudioDeviceID], 0, [self coreAudioIsInput], kAudioDevicePropertyDataSources, &size, NULL) )
 		{
-			if( size == 1 )
+			if( size > sizeof(UInt32) )
 				return [NSString stringWithFormat: @"%@: %@", deviceName, sourceName];
 		}
 	}
@@ -136,7 +135,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 	return _sourceType;
 }
 
-- (OSType)fetchCoreAudioSourceType
+- (OSType)selectedCoreAudioSourceType
 {
 	OSStatus err;
 	OSType sourceType;
@@ -585,7 +584,7 @@ static const float kSystemVolumeConversionPower = 1.38;
 	if( !_audioFollowsJack )
 		return;
 
-	changedDeviceSource = [[self deviceWithID: deviceID isInput: isInput] fetchCoreAudioSourceType];
+	changedDeviceSource = [[self deviceWithID: deviceID isInput: isInput] selectedCoreAudioSourceType];
 	currentDefaultDevice = [[self selectedOutputDevice] coreAudioDeviceID];
 	newDefaultDevice = 0;
 
@@ -674,7 +673,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 				status = AudioDeviceAddPropertyListener( [device coreAudioDeviceID], 0, [device coreAudioIsInput],
 														  kAudioDevicePropertyDataSource, devicePropertyChanged, self);
 			
-				if( [device fetchCoreAudioSourceType] == kIOAudioOutputPortSubTypeHeadphones )
+				if( [device selectedCoreAudioSourceType] == kIOAudioOutputPortSubTypeHeadphones )
 				{
 					if( [device coreAudioDeviceID] != _previousDefaultDevice )
 						[self setSelectedOutputDevice: device];

@@ -28,7 +28,7 @@
 - (AudioDeviceID)coreAudioDeviceID;
 - (BOOL)coreAudioIsInput;
 - (OSType)coreAudioSourceType;
-- (OSType)fetchCoreAudioSourceType;
+- (OSType)selectedCoreAudioSourceType;
 
 @end
 
