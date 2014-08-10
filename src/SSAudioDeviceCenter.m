@@ -94,7 +94,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 	if( sourceName && ![sourceName isEqual: deviceName] )
 	{
 		//In the case of just 1 source on the device, we do DeviceName:SourceName (this matches Sound.prefPane)
-		if( !AudioDeviceGetPropertyInfo([self coreAudioIsInput], 0, [self coreAudioIsInput], kAudioDevicePropertyDataSources, &size, NULL) )
+		if( !AudioDeviceGetPropertyInfo([self coreAudioDeviceID], 0, [self coreAudioIsInput], kAudioDevicePropertyDataSources, &size, NULL) )
 		{
 			if( size == 1 )
 				return [NSString stringWithFormat: @"%@: %@", deviceName, sourceName];
