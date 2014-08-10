@@ -8,6 +8,22 @@ and setting volume.
 The command line tool has no man page yet, but here's a simple
 example of how to use it:
 
+    % soundsource -h
+    usage: soundsource [-ios] [device]
+       or: soundsource [-IOS] volume
+      -i         display selected audio input device
+      -o         display selected audio output device
+      -s         display output device used for alert sounds, sound effects
+      -i device  set selected audio input device
+      -o device  set selected audio output device
+      -s device  set output device used for alert sounds, sound effects
+      -I         display selected audio input device's volume
+      -O         display selected audio output device's volume
+      -S         display alert sounds/sound effects volume
+      -I volume  set selected audio input device's volume
+      -O volume  set selected audio output device's volume
+      -S volume  set alert sounds/sound effects volume
+    With no arguments, displays available/selected (*) devices and volumes.
     % soundsource
     Output (volume 0.001):
     * Andrea PureAudio USB-SA Headset
