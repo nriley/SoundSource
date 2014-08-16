@@ -164,6 +164,38 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 	return trans;
 }
 
+- (BOOL)isMuted
+{
+    UInt32 muted, size = sizeof(muted);
+    OSStatus err;
+    AudioObjectPropertyAddress address = {
+        .mSelector = kAudioDevicePropertyMute,
+        .mScope = kAudioDevicePropertyScopeOutput,
+        .mElement = 0
+    };
+
+    err = AudioObjectGetPropertyData( [self coreAudioDeviceID], &address, 0, NULL, &size, &muted);
+    if( err || size != sizeof(muted))
+        return NO;
+    return muted;
+}
+
+- (BOOL)setMuted:(BOOL)isMuted
+{
+    UInt32 muted = isMuted;
+    OSStatus err;
+    AudioObjectPropertyAddress address = {
+        .mSelector = kAudioDevicePropertyMute,
+        .mScope = kAudioDevicePropertyScopeOutput,
+        .mElement = 0
+    };
+
+    err = AudioObjectSetPropertyData( [self coreAudioDeviceID], &address, 0, NULL, sizeof(muted), &muted);
+    if( err )
+        return NO;
+    return YES;
+}
+
 @end
 
 #pragma mark -
@@ -561,6 +593,8 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 - (void)setOutputVolume: (float)vol
 {
 	[self _getAndSetVolume: vol forInput: NO];
+    if (vol > 0)
+        [[self selectedOutputDevice] setMuted: NO];
 }
 
 static const float kSystemVolumeConversionPower = 1.38;

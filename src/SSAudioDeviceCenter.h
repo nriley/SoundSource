@@ -30,6 +30,9 @@
 - (OSType)coreAudioSourceType;
 - (OSType)selectedCoreAudioSourceType;
 
+- (BOOL)isMuted;
+- (BOOL)setMuted:(BOOL)isMuted;
+
 @end
 
 @interface SSAudioDeviceCenter : NSObject
