@@ -166,8 +166,8 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (BOOL)isMuted
 {
-    UInt32 muted, size = sizeof(muted);
     OSStatus err;
+    UInt32 muted, size = sizeof(muted);
     AudioObjectPropertyAddress address = {
         .mSelector = kAudioDevicePropertyMute,
         .mScope = kAudioDevicePropertyScopeOutput,
@@ -182,8 +182,8 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (BOOL)setMuted:(BOOL)isMuted
 {
-    UInt32 muted = isMuted;
     OSStatus err;
+    UInt32 muted = isMuted;
     AudioObjectPropertyAddress address = {
         .mSelector = kAudioDevicePropertyMute,
         .mScope = kAudioDevicePropertyScopeOutput,
