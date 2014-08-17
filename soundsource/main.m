@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SSAudioDeviceCenter.h"
 
-static void printAudioDevices(char *title, float volume, NSArray *audioDevices, SSAudioDevice *selected) {
+static void printAudioDevices(const char *title, float volume, NSArray *audioDevices, SSAudioDevice *selected) {
     printf("%s ", title);
     if (volume == NAN) {
         printf("(selected device has no volume adjustment)");
@@ -40,6 +40,7 @@ static SSAudioDevice *audioDeviceWithName(NSArray *audioDevices, NSString *name)
 void usage(const char *argv0) {
     fprintf(stderr, "usage: %s [-ios] [device]\n", argv0);
     fprintf(stderr, "   or: %s [-IOS] volume\n", argv0);
+    fprintf(stderr, "   or: %s [-Mm]\n", argv0);
     fprintf(stderr, "  -i         display selected audio input device\n");
     fprintf(stderr, "  -o         display selected audio output device\n");
     fprintf(stderr, "  -s         display output device used for alert sounds, sound effects\n");
@@ -52,6 +53,8 @@ void usage(const char *argv0) {
     fprintf(stderr, "  -I volume  set selected audio input device's volume\n");
     fprintf(stderr, "  -O volume  set selected audio output device's volume\n");
     fprintf(stderr, "  -S volume  set alert sounds/sound effects volume\n");
+    fprintf(stderr, "  -M         mute selected audio output device\n");
+    fprintf(stderr, "  -m         unmute selected audio output device\n");
     fprintf(stderr, "With no arguments, displays available/selected (*) devices and volumes.\n");
     exit(1);
 }
@@ -62,7 +65,8 @@ int main(int argc, const char * argv[]) {
         SSAudioDeviceCenter *deviceCenter = [[SSAudioDeviceCenter alloc] init];
 
         if (argc < 2) {
-            printAudioDevices("Output", [deviceCenter outputVolume],
+            const char *outputDevice = [[deviceCenter selectedOutputDevice] isMuted] ? "Output muted" : "Output";
+            printAudioDevices(outputDevice, [deviceCenter outputVolume],
                               [deviceCenter outputDevices],
                               [deviceCenter selectedOutputDevice]);
             printAudioDevices("Input", [deviceCenter inputVolume],
@@ -89,6 +93,10 @@ int main(int argc, const char * argv[]) {
                 case 'I': volume = [deviceCenter inputVolume]; break;
                 case 'O': volume = [deviceCenter outputVolume]; break;
                 case 'S': volume = [deviceCenter systemVolume]; break;
+                case 'M':
+                case 'm':
+                    [[deviceCenter selectedOutputDevice] setMuted:option == 'M'];
+                    return 0;
                 default:
                     usage(argv[0]);
             }
