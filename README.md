@@ -11,6 +11,7 @@ example of how to use it:
     % soundsource -h
     usage: soundsource [-ios] [device]
        or: soundsource [-IOS] volume
+       or: soundsource [-Mm]
       -i         display selected audio input device
       -o         display selected audio output device
       -s         display output device used for alert sounds, sound effects
@@ -23,20 +24,29 @@ example of how to use it:
       -I volume  set selected audio input device's volume
       -O volume  set selected audio output device's volume
       -S volume  set alert sounds/sound effects volume
+      -M         mute selected audio output device
+      -m         unmute selected audio output device
     With no arguments, displays available/selected (*) devices and volumes.
     % soundsource
     Output (volume 0.001):
+      AirPlay: Furrball
+      AirPlay: Furrball II
     * Andrea PureAudio USB-SA Headset
-      Furrball II
+      BW900 HS
       Internal Speakers
+      Soundflower (16ch)
+      Soundflower (2ch)
       ZoomSwitch USB Adapter
     Input (volume 0.926):
       Andrea PureAudio USB-SA Headset: External Line Connector
       Andrea PureAudio USB-SA Headset: External SPDIF Interface
     * Andrea PureAudio USB-SA Headset: Microphone
+      BW900 HS
       Line In
+      Soundflower (16ch)
+      Soundflower (2ch)
       ZoomSwitch USB Adapter
-    System (volume 1.000):
+    System (volume 0.989):
     * Internal Speakers
     % soundsource -i
     Andrea PureAudio USB-SA Headset: Microphone
