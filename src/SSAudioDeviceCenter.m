@@ -47,7 +47,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (NSString*)description
 {
-	return [NSString stringWithFormat: @"<%@: %@ (%d)>", [self class], [self name], (unsigned int)[self coreAudioDeviceID]];
+	return [NSString stringWithFormat: @"<%@: %@ (%d) %@>", [self class], [self name], (unsigned int)[self coreAudioDeviceID], NSFileTypeForHFSTypeCode([self coreAudioTransportType])];
 }
 
 - (BOOL)isEqual: (SSAudioDevice*)device
@@ -90,14 +90,15 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 			sourceName = nil;
 	}
 	
-	if( sourceName && ![sourceName isEqual: deviceName] )
-	{
-        // If >1 source on device, use DeviceName: SourceName (doesn't match Sound prefpane, but is much easier to understand)
-		if( !AudioDeviceGetPropertyInfo([self coreAudioDeviceID], 0, [self coreAudioIsInput], kAudioDevicePropertyDataSources, &size, NULL) )
-		{
-			if( size > sizeof(UInt32) )
-				return [NSString stringWithFormat: @"%@: %@", deviceName, sourceName];
-		}
+    // If AirPlay or >1 source on device, use DeviceName: SourceName (doesn't match Sound prefpane, but is much easier to understand)
+	if( ( sourceName && ![sourceName isEqual: deviceName] ) &&
+        (
+          ( !AudioDeviceGetPropertyInfo([self coreAudioDeviceID], 0, [self coreAudioIsInput], kAudioDevicePropertyDataSources, &size, NULL) && ( size > sizeof(UInt32) )
+          ) || ( [self coreAudioTransportType] == kAudioDeviceTransportTypeAirPlay )
+        )
+      )
+    {
+        return [NSString stringWithFormat: @"%@: %@", deviceName, sourceName];
 	}
 
 	return sourceName ? sourceName : deviceName;
@@ -155,13 +156,17 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 - (unsigned)coreAudioTransportType
 {
 	OSStatus err;
-	UInt32 trans;
-	UInt32 size = sizeof(trans);
-	
-	err = AudioDeviceGetProperty( [self coreAudioDeviceID], 0, [self coreAudioIsInput], kAudioDevicePropertyTransportType, &size, &trans);
+	UInt32 transportType, size = sizeof(transportType);
+    AudioObjectPropertyAddress address = {
+        .mSelector = kAudioDevicePropertyTransportType,
+        .mScope = kAudioObjectPropertyScopeGlobal,
+        .mElement = kAudioObjectPropertyElementMaster
+    };
+
+    err = AudioObjectGetPropertyData( [self coreAudioDeviceID], &address, 0, NULL, &size, &transportType);
 	if( err )
 		return 0;
-	return trans;
+	return transportType;
 }
 
 - (BOOL)isMuted
