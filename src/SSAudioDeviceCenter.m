@@ -171,7 +171,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
     AudioObjectPropertyAddress address = {
         .mSelector = kAudioDevicePropertyMute,
         .mScope = kAudioDevicePropertyScopeOutput,
-        .mElement = 0
+        .mElement = kAudioObjectPropertyElementMaster
     };
 
     err = AudioObjectGetPropertyData( [self coreAudioDeviceID], &address, 0, NULL, &size, &muted);
@@ -187,7 +187,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
     AudioObjectPropertyAddress address = {
         .mSelector = kAudioDevicePropertyMute,
         .mScope = kAudioDevicePropertyScopeOutput,
-        .mElement = 0
+        .mElement = kAudioObjectPropertyElementMaster
     };
 
     err = AudioObjectSetPropertyData( [self coreAudioDeviceID], &address, 0, NULL, sizeof(muted), &muted);
