@@ -26,6 +26,7 @@
 - (BOOL)canBeDefaultSystemDevice;
 
 - (AudioDeviceID)coreAudioDeviceID;
+- (NSString *)coreAudioDeviceUID;
 - (BOOL)coreAudioIsInput;
 - (OSType)coreAudioSourceType;
 - (OSType)selectedCoreAudioSourceType;

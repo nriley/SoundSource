@@ -126,6 +126,27 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 	return (err == noErr) && (canBe == 1);
 }
 
+- (NSString *)coreAudioDeviceUID
+{
+    OSStatus err;
+    CFStringRef deviceUID;
+    UInt32 size = sizeof(deviceUID);
+    AudioObjectPropertyAddress propertyAddress = {
+        kAudioDevicePropertyDeviceUID,
+        kAudioObjectPropertyScopeGlobal,
+        kAudioObjectPropertyElementWildcard };
+
+    err = AudioObjectGetPropertyData( [self coreAudioDeviceID], &propertyAddress, 0, NULL, &size, &deviceUID);
+
+    if (err != noErr)
+        return nil;
+
+    NSString *deviceUIDString = [[(NSString *)deviceUID copy] autorelease];
+    CFRelease(deviceUID);
+
+    return deviceUIDString;
+}
+
 - (AudioDeviceID)coreAudioDeviceID
 {
 	return _deviceID;
