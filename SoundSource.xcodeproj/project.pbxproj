@@ -34,8 +34,8 @@
 		E1C8B77D16FA8FF300CCB05B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
 				E1C8B78816FA8FF300CCB05B /* soundsource.1 in CopyFiles */,
 			);
