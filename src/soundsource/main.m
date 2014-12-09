@@ -56,6 +56,8 @@ void usage(const char *argv0) {
     fprintf(stderr, "  -M         mute selected audio output device\n");
     fprintf(stderr, "  -m         unmute selected audio output device\n");
     fprintf(stderr, "With no arguments, displays available/selected (*) devices and volumes.\n");
+    fprintf(stderr, "soundsource 3.0 (c) 2014 Nicholas Riley <http://sabi.net/nriley/software/>.\n");
+    fprintf(stderr, "Portions (c) 2003-2009 Rogue Amoeba Software, LLC.\n");
     exit(1);
 }
 
