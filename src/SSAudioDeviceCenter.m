@@ -47,7 +47,7 @@ static OSStatus devicePropertyChanged( AudioDeviceID deviceID, UInt32 inChannel,
 
 - (NSString*)description
 {
-	return [NSString stringWithFormat: @"<%@: %@ (%d) %@>", [self class], [self name], (unsigned int)[self coreAudioDeviceID], NSFileTypeForHFSTypeCode([self coreAudioTransportType])];
+	return [NSString stringWithFormat: @"<%@: %@ (%d) %@/%@>", [self class], [self name], (unsigned int)[self coreAudioDeviceID], NSFileTypeForHFSTypeCode([self coreAudioTransportType]), NSFileTypeForHFSTypeCode([self coreAudioSourceType])];
 }
 
 - (BOOL)isEqual: (SSAudioDevice*)device
