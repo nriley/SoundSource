@@ -132,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				7810FF2610437E490069B86A /* src */,
-				E1C8B78216FA8FF300CCB05B /* soundsource */,
 				7810FF2210437E490069B86A /* res */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -166,6 +165,7 @@
 		7810FF2610437E490069B86A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8B78216FA8FF300CCB05B /* soundsource */,
 				7810FF2810437E490069B86A /* SoundSource_Prefix.pch */,
 				7810FF3310437E8C0069B86A /* SSAppController.h */,
 				7810FF3410437E8C0069B86A /* SSAppController.m */,
@@ -379,6 +379,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CURRENT_PROJECT_VERSION = 3.0;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -403,6 +404,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CURRENT_PROJECT_VERSION = 3.0;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -436,7 +438,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "soundsource/soundsource-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/soundsource/soundsource-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -470,7 +472,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "soundsource/soundsource-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/soundsource/soundsource-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
