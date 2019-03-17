@@ -22,6 +22,7 @@
 		78A768781047133600349A68 /* menuIconBlack.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78A768761047133600349A68 /* menuIconBlack.pdf */; };
 		78AB6D39104499570011CE3D /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78AB6D37104499570011CE3D /* AboutBox.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E15B5F24223EF4E900975AE7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15B5F23223EF4E900975AE7 /* AudioToolbox.framework */; };
 		E1C8B78416FA8FF300CCB05B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B78316FA8FF300CCB05B /* main.m */; };
 		E1C8B78816FA8FF300CCB05B /* soundsource.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1C8B78716FA8FF300CCB05B /* soundsource.1 */; };
 		E1C8B78C16FA919E00CCB05B /* SSAudioDeviceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810FF4F10437F220069B86A /* SSAudioDeviceCenter.m */; };
@@ -70,6 +71,8 @@
 		78A768761047133600349A68 /* menuIconBlack.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = menuIconBlack.pdf; sourceTree = "<group>"; };
 		78AB6D38104499570011CE3D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AboutBox.xib; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* SoundSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15B5F23223EF4E900975AE7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E15B5F25223EF4EC00975AE7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E1C8B77F16FA8FF300CCB05B /* soundsource */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = soundsource; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8B78316FA8FF300CCB05B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1C8B78616FA8FF300CCB05B /* soundsource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "soundsource-Prefix.pch"; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15B5F24223EF4E900975AE7 /* AudioToolbox.framework in Frameworks */,
 				E1C8B78D16FA91BB00CCB05B /* CoreAudio.framework in Frameworks */,
 				E1C8B78E16FA91DF00CCB05B /* Carbon.framework in Frameworks */,
 				E1C8B78F16FA91E900CCB05B /* Foundation.framework in Frameworks */,
@@ -106,6 +110,7 @@
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				7810FF6D10437F880069B86A /* Carbon.framework */,
 				7810FF5D10437F4F0069B86A /* CoreAudio.framework */,
+				E15B5F25223EF4EC00975AE7 /* AudioToolbox.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E15B5F23223EF4E900975AE7 /* AudioToolbox.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -372,14 +378,14 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CURRENT_PROJECT_VERSION = 3.0;
+				CURRENT_PROJECT_VERSION = 3.1d1;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -397,14 +403,14 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CURRENT_PROJECT_VERSION = 3.0;
+				CURRENT_PROJECT_VERSION = 3.1d1;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -421,7 +427,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -455,7 +460,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;

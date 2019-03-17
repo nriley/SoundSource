@@ -8,6 +8,7 @@
 
 #import "SSAudioDeviceCenter.h"
 
+#import <AudioToolbox/AudioToolbox.h>
 #import <Carbon/Carbon.h>
 #import <CoreAudio/CoreAudio.h>
 #import <IOKit/audio/IOAudioTypes.h>
@@ -625,24 +626,29 @@ static Boolean (*AudioHardwareServiceHasPropertyPtr)(AudioObjectID inObjectID,
 
 static const float kSystemVolumeConversionPower = 1.38;
 
+CF_ENUM(AudioServicesPropertyID) {
+    kAudioServicesPropertySystemSoundLevel = 'ssvl'
+};
+
 - (float)systemVolume
 {
-	long level = 0;
-	OSErr err = GetSysBeepVolume( &level );
+    float level = 0;
+	UInt32 volSize = sizeof(level);
+    OSStatus err = AudioServicesGetProperty(kAudioServicesPropertySystemSoundLevel, 0, NULL, &volSize, &level);
 	if( err )
 	{
 		NSLog( @"Getting alert volume got error %d", err );
 		return NAN;
 	}
 	
-	float volume = pow( (float)level / (1 << 24), kSystemVolumeConversionPower );
-	return volume;
+	return powf(level, kSystemVolumeConversionPower);
 }
 
 - (void)setSystemVolume: (float)vol
 {
-	vol = pow( vol, 1.0/kSystemVolumeConversionPower );
-	OSErr err = SetSysBeepVolume( vol * (1 << 24) );
+    float level = powf( vol, 1.0/kSystemVolumeConversionPower );
+    UInt32 levelSize = sizeof(level);
+    OSStatus err = AudioServicesSetProperty(kAudioServicesPropertySystemSoundLevel, 0, NULL, levelSize, &vol);
 	if( err )
 		NSLog( @"Setting alert volume got error %d", err );
 }	
