@@ -1,7 +1,7 @@
 SoundSource
 ===========
 
-This project contains a version of Rogue Amoeba's SoundSource
+This project contains a version of Rogue Amoeba's SoundSource 2.5
 with an added command line tool for switching audio devices
 and setting volume.
 
@@ -62,4 +62,4 @@ example of how to use it:
     0.802
 
 A few examples of using `soundsource` in scripts are
-[on my blog](http://njr.sabi.net/2014/06/21/soundsource-a-few-examples/).
+[on my blog](https://njr.sabi.net/2014/06/21/soundsource-a-few-examples/).
