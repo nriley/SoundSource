@@ -5,6 +5,11 @@ This project contains a version of Rogue Amoeba's SoundSource 2.5
 with an added command line tool for switching audio devices
 and setting volume.
 
+If you want a graphical version of SoundSource, you can get one from
+[Rogue Amoeba](https://rogueamoeba.com/soundsource/).  Current
+versions of Rogue Amoeba's SoundSource are commercial products, not
+open source.
+
 The command line tool has no man page yet, but here's a simple
 example of how to use it:
 
